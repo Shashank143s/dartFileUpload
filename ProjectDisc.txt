@@ -1,0 +1,23 @@
+Front End -
+Framework : AngularDart
+CSS Framework - Google Materialize
+Language: Google Dart
+- use stagehand to create front-end AngularDart sample app. creates the folder structure.
+
+Back-End - 
+Framework : Angel
+Language : Google Dart
+- use angel-cli to create a backend sample app. creates the folder structure.
+
+Database:
+MongoDB
+
+App Description: 
+1. Front End - 
+	- View Files and Upload Files
+	- Drag and Drop Upload Feature
+
+2. Back End -
+	- create RESTful API end points
+	- upload files to a storage drive on server
+	- save metadata of the file on the database 
