@@ -1,0 +1,21 @@
+<div class="ui container">
+    <div class="ui secondary menu">
+        <div class="item">
+            <span class="ui header">
+                DropzoneJS for Angular Dart
+            </span>
+        </div>
+        <div class="right menu">
+            <a class="ui item" href="https://github.com/ngyewch/dropzone-angular-dart">
+                <i class="github icon"></i> Github
+            </a>
+        </div>
+    </div>
+    <div (dropzone)="initDropzone($event)" [config]="dropzoneConfiguration" class="dropzone"></div>
+
+    <p *ngIf="uploadedFile != null">
+        Uploaded file type = {{ uploadedFile.type }}<br/>
+        Uploaded file size = {{ uploadedFile.size | number }}<br/>
+        Upload response = {{ uploadResponse }}<br/>
+    </p>
+</div>

@@ -1,0 +1,7 @@
+<div (dropzone)="initDropzone($event)" [config]="dropzoneConfiguration" class="dropzone"></div>
+
+<p *ngIf="uploadedFile != null">
+    Uploaded file type = {{ uploadedFile.type }}<br/>
+    Uploaded file size = {{ uploadedFile.size | number }}<br/>
+    Upload response = {{ uploadResponse }}<br/>
+</p>

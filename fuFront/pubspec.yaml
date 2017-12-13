@@ -10,7 +10,8 @@ environment:
 dependencies:
   angular: ^4.0.0
   angular_components: ^0.8.0
-  dropzone_angular_dart: any
+  dropzone_angular_dart:
+    path: ./lib/dropzone-angular-dart-master/
 
 dev_dependencies:
   angular_test: ^1.0.0
