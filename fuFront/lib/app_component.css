@@ -1,3 +1,16 @@
 :host {
     /* This is equivalent of the 'body' selector of a page. */
 }
+
+.row{
+  margin:0px;
+  height:100%;
+  min-height:100%;
+}
+
+
+
+img{
+  padding:30px;
+  cursor:pointer;
+}

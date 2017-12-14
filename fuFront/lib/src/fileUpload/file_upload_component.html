@@ -1,4 +1,7 @@
-<div (dropzone)="initDropzone($event)" [config]="dropzoneConfiguration" class="dropzone"></div>
+<div (dropzone)="initDropzone($event)" [config]="dropzoneConfiguration" class="dropzone">
+<img id="featImg" alt="Feature image" height="52" src="files-lg.svg" width="204"/>
+<div class="dz-message" data-dz-message><span class="flow-text">Drag files here to add them to your repository...</span></div>
+</div>
 
 <p *ngIf="uploadedFile != null">
     Uploaded file type = {{ uploadedFile.type }}<br/>
