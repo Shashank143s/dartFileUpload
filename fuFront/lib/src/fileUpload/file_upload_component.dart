@@ -15,7 +15,7 @@ import 'package:dropzone_angular_dart/dropzone_angular_dart.dart';
 
 class FileUploadComponent{
   DropzoneConfiguration dropzoneConfiguration = new DropzoneConfiguration(
-      url: 'http://localhost:6969/upload' , method: 'POST' ,  addRemoveLinks: true, maxFiles: 1);
+      url: 'http://localhost:3000/uploads' , method: 'POST' ,  addRemoveLinks: true, maxFiles: 10);
   Dropzone dropzone;
   Blob uploadedFile = null;
   String uploadResponse = null;

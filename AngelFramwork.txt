@@ -1,0 +1,6 @@
+Angel framework:
+1. optimized for full-stack development
+2. both backends and frontends entirely in Dart
+3. basic API is modeled after Express, and new functionality is added via plug-ins
+4. Hot reloading
+5. Scalability 
