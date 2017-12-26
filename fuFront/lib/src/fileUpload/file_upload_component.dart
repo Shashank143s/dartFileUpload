@@ -29,8 +29,7 @@ class FileUploadComponent{
   }
 
   void success(Blob file, String response, Event event) {
-    print('success(' + file.toString() + ", " + response + ", " +
-        event.toString() + ")");
+    print('success(' + file.toString() + ", " + response + ", " + event.toString() + ")");
     zone.run(() {
       uploadedFile = file;
       uploadResponse = response;

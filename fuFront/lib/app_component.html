@@ -1,16 +1,17 @@
 <div class="row">
   <!--Feature Discovery-->
-  <!-- <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a-->
-
-  <!-- Tap Target Structure -->
-  <!--div class="tap-target" data-activates="menu">
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a id="menu" class="waves-effect waves-light btn btn-floating" onclick="$('.tap-target').tapTarget('open');"><i class="material-icons">menu</i></a>
+  </div>
+<!-- Tap Target Structure -->
+  <div class="tap-target" data-activates="menu">
     <div class="tap-target-content">
       <h5>Title</h5>
       <p>A bunch of text</p>
     </div>
-  </div> -->
+  </div>
 
-  <div class="col s6 m6 l6 valign-wrapper" style="background-color:rgb(2, 168, 243); height:100%; min-height:100%">
+  <div class="col s6 m6 l6 valign-wrapper" style="background-image:url('dartbg.jpg'); height:100%; min-height:100%">
     <div  style="display:block; margin:auto;">
       <a [routerLink]="['Upload']"><img [class.z-depth-5]="selectValueUpload" (click)="selectedIconUpload()" src="fileUpload.png"/></a>
       <img [class.z-depth-5]="selectValueView" (click)="selectedIconView()" src="fileView.png"/>

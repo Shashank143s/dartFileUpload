@@ -4,6 +4,9 @@ import 'package:angel_framework/angel_framework.dart';
 import 'package:angel_static/angel_static.dart';
 import 'package:file/file.dart';
 import 'controllers/controllers.dart' as controllers;
+import '../config/plugins/fileUploadParser.dart';
+import '../config/plugins/mongoConnect.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 /// Put your app routes here!
 ///
@@ -16,13 +19,22 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     await app.configure(controllers.configureServer);
     app.lazyParseBodies = true;
     // Render `views/hello.jl` when a user visits the application root.
-    app.get('/', (RequestContext req, ResponseContext res) => res.sendFile());
+    app.get('/', (RequestContext req, ResponseContext res) => res);
 
     app.post('/uploads',(request,res) async {
       var file = await request.lazyFiles();
       await request.parse();
-
-      print(file);
+      var fup = new FileUploadParser(file[0]);
+      var fileup = fup.fileUploadParser();
+      var size;
+      fileup.length().then((len) {
+        size = len/1000;
+        print(size);
+      });
+      var mdb = new MongoInit();
+      DbCollection coll;
+      await mdb.mongoInit().then((data)=>coll=data);
+      await coll.insert({'filesize': size , 'filename': 'xyz'});
     });
 
     // Mount static server at web in development.

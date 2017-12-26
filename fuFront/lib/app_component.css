@@ -14,3 +14,7 @@ img{
   padding:30px;
   cursor:pointer;
 }
+
+.tap-target{
+  background-image:url('dartbg.jpg');
+}

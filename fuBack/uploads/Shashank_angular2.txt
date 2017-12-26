@@ -1,0 +1,38 @@
+/** Listening to user Events **/
+In your component @Component and template attribute -->
+<input type="text" (input)="onUserInput($event)">
+
+In your class create a new Event listener method
+  onUserInput(event)
+{
+    this.name = event.target.value;
+  }
+
+
+/** Binding to Properties **/
+1. value={{ name }} //String Interpolation
+2. [value]="name" //Bind the value property
+    In your @Component:	
+	<input type="text" (input)="onUserInput($event)" [value]="name">
+    In your class:
+	  onUserInput(event)
+{
+    this.name = event.target.value;
+  }
+
+/** Two-way binding **/
+In your @component and template
+<input type="text" [(ngModel)]="name">
+In you modules.ts
+1. import {FormsModule} from '@angular/forms'
+2.In @NgModule add in imports
+	  imports: [ BrowserModule,FormsModule ]
+
+//** Adding decoraters to properties **/
+@Input() and @Output()
+
+Property and Event binding; ==>
+Emit events from any component and listen in html of another component
+
+Plunker URL --> https://plnkr.co/edit/bQd0qQ78V5Dz7OP03jdU (Star War Application)
+https://stackblitz.com/edit/angular-ryyzkf?file=app%2Ftabs%2Ftabs.component.html
