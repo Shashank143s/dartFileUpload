@@ -1,6 +1,8 @@
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 
+
+
 @Component(
   selector: 'app-welcome-page',
   styleUrls: const ['welcome_page_component.css'],

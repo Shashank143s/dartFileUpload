@@ -3,6 +3,7 @@ import 'package:angular_components/angular_components.dart';
 import 'package:angular_router/angular_router.dart';
 import 'src/fileUpload/file_upload_component.dart';
 import 'src/welcomePage/welcome_page_component.dart';
+import 'src/viewFiles/view_files_component.dart';
 
 
 // AngularDart info: https://webdev.dartlang.org/angular
@@ -18,7 +19,8 @@ import 'src/welcomePage/welcome_page_component.dart';
 
 @RouteConfig(const [
   const Route(path: '/fileupload', name: 'Upload', component: FileUploadComponent),
-  const Route(path: '/', name: 'Welcome', component: WelcomePageComponent)
+  const Route(path: '/', name: 'Welcome', component: WelcomePageComponent),
+  const Route(path: '/view', name: 'View', component: ViewFilesComponent)
 ])
 
 class AppComponent {

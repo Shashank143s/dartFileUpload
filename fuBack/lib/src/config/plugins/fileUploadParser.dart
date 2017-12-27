@@ -7,9 +7,17 @@ class FileUploadParser{
   //Constructor
   FileUploadParser(this.file);
   //method
-  fileUploadParser(){
-        return new IOParser.File('uploads/'+ file.filename)
-        ..writeAsBytes(file.data)
-        .then((data) => data);
+  double fLength;
+  String fName;
+  fileUploadParser() async{
+        IOParser.File f = new IOParser.File('web/uploads/'+ file.filename);
+        await f.writeAsBytes(file.data)
+        .then((data){
+          fLength = data.lengthSync()/1000;
+          fName = data.toString().split('/')[data.toString().split('/').length-1].split('\'')[0];
+        });
+        print(fLength);
+        print(fName);
+        return [fLength,fName];
   }
 }

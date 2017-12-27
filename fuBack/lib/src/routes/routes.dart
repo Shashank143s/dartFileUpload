@@ -15,6 +15,9 @@ import 'package:mongo_dart/mongo_dart.dart';
 /// * https://github.com/angel-dart/angel/wiki/Requests-&-Responses
 AngelConfigurer configureServer(FileSystem fileSystem) {
   return (Angel app) async {
+    var mdb = new MongoInit();
+    DbCollection coll;
+    await mdb.mongoInit().then((data)=>coll=data);
     // Typically, you want to mount controllers first, after any global middleware.
     await app.configure(controllers.configureServer);
     app.lazyParseBodies = true;
@@ -24,17 +27,17 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     app.post('/uploads',(request,res) async {
       var file = await request.lazyFiles();
       await request.parse();
+      print(file[0]);
       var fup = new FileUploadParser(file[0]);
-      var fileup = fup.fileUploadParser();
-      var size;
-      fileup.length().then((len) {
-        size = len/1000;
-        print(size);
-      });
-      var mdb = new MongoInit();
-      DbCollection coll;
-      await mdb.mongoInit().then((data)=>coll=data);
-      await coll.insert({'filesize': size , 'filename': 'xyz'});
+      var fileup = await fup.fileUploadParser();
+      print(fup.fLength);
+      coll.insert({'filename': fileup[1] , 'filesize': fileup[0]});
+    });
+
+    app.get('/fetch',(request,response) async{
+      List files = await coll.find().toList();
+      response.json(files);
+      response.end();
     });
 
     // Mount static server at web in development.

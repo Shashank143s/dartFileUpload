@@ -14,7 +14,7 @@
   <div class="col s6 m6 l6 valign-wrapper" style="background-image:url('dartbg.jpg'); height:100%; min-height:100%">
     <div  style="display:block; margin:auto;">
       <a [routerLink]="['Upload']"><img [class.z-depth-5]="selectValueUpload" (click)="selectedIconUpload()" src="fileUpload.png"/></a>
-      <img [class.z-depth-5]="selectValueView" (click)="selectedIconView()" src="fileView.png"/>
+      <a [routerLink]="['View']"><img [class.z-depth-5]="selectValueView" (click)="selectedIconView()" src="fileView.png"/></a>
     </div>
     <!-- <a class="btn btn-floating btn-large light-blue lighten-2 pulse">Click</a> -->
   </div>
