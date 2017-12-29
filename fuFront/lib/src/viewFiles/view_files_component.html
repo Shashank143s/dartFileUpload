@@ -1,0 +1,17 @@
+<table class="responsive-table striped highlight">
+        <thead>
+          <tr>
+              <th>File Name</th>
+              <th>File Size</th>
+              <th>Download</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor = "let file of files" >
+            <td>{{file.filename}}</td>
+            <td>{{file.filesize}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+</table>

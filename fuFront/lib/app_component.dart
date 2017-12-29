@@ -1,3 +1,4 @@
+
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 import 'package:angular_router/angular_router.dart';
@@ -14,7 +15,7 @@ import 'src/viewFiles/view_files_component.dart';
   styleUrls: const ['app_component.css'],
   templateUrl: 'app_component.html',
   directives: const [materialDirectives, ROUTER_DIRECTIVES],
-  providers: const [materialProviders]
+  providers: const [ ]
 )
 
 @RouteConfig(const [
@@ -23,10 +24,11 @@ import 'src/viewFiles/view_files_component.dart';
   const Route(path: '/view', name: 'View', component: ViewFilesComponent)
 ])
 
-class AppComponent {
+class AppComponent{
   // Nothing here yet. All logic is in FileUploadComponent.
   bool selectValueUpload = false;
   bool selectValueView = false;
+
 
   void selectedIconUpload(){
     selectValueUpload = true;
