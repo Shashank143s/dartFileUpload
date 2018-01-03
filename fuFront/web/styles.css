@@ -17,6 +17,14 @@ app-file-upload{
   margin:auto;
 }
 
+app-view-files{
+  width:450px;
+  display:block;
+  max-height:400px;
+  overflow-y:scroll;
+  margin:auto;
+}
+
 .dropzone .dz-preview .dz-image{
   border-radius:0px;
   background-color: #b3e5fc;

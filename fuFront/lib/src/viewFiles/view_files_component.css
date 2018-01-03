@@ -1,0 +1,13 @@
+
+/* tbody{
+  display:block;
+  width:100%;
+  max-height: 450px;
+  overflow-y: scroll;
+} */
+thead{
+  background-image: url('geometric-ice.jpg');
+}
+th,td{
+  padding:10px 15px;
+}

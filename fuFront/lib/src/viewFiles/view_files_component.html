@@ -1,17 +1,30 @@
-<table class="responsive-table striped highlight">
+<div class="input-field col s2" *ngIf="searchClicked" style="position:fixed; top: 15px; right: 64px;">
+  <input type="text" class="validate" [(ngModel)]="searchString" (input)="searchDynamic()">
+</div>
+<div class="fixed-action-btn" (click)="showSearchBox()" style="top: 15px; right: 24px; max-height:80px;">
+  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">search</i></a>
+</div>
+<table class="striped highlight">
         <thead>
           <tr>
               <th>File Name</th>
               <th>File Size</th>
-              <th>Download</th>
+              <th>Actions</th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor = "let file of files" >
-            <td>{{file.filename}}</td>
-            <td>{{file.filesize}}</td>
-            <td></td>
+            <td>{{file.filename | camelCase}}</td>
+            <td>{{file.filesize}} KB</td>
+            <td>
+              <a href="{{file.dlink}}">
+                <i class="material-icons">file_download</i>
+              </a>
+              <a style="color:Red; cursor:pointer;" id="{{file.filename}}" (click)="deleteMe(file.filename)">
+                <i class="material-icons">delete_forever</i>
+              </a>
+            </td>
           </tr>
         </tbody>
 </table>

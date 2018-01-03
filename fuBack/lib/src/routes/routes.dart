@@ -31,12 +31,25 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
       var fup = new FileUploadParser(file[0]);
       var fileup = await fup.fileUploadParser();
       print(fup.fLength);
-      coll.insert({'filename': fileup[1] , 'filesize': fileup[0]});
+      coll.insert({'filename': fileup[1] , 'filesize': fileup[0], 'dlink':fileup[2]});
     });
 
     app.get('/fetch',(request,response) async{
       List files = await coll.find().toList();
       response.json(files);
+      response.end();
+    });
+
+    app.get('/search/:sid',(request,response) async{
+      print('search value' + request.params['sid']);
+      List files = await coll.find({'filename' : {'\$regex': new BsonRegexp(request.params['sid'])}}).toList();
+      response.json(files);
+      response.end();
+    });
+
+    app.get('/delete/:fid',(request,response) async{
+      var msg = await coll.remove(where.eq('filename',request.params['fid']));
+      response.json(msg);
       response.end();
     });
 

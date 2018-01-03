@@ -12,7 +12,8 @@ dependencies:
   angular_components: ^0.8.0
   angular_forms: ^1.0.0
   angular_router: ^1.0.2
-  json_object: any 
+  json_object: any
+  rxdart: any 
   dropzone_angular_dart:
     path: ./lib/dropzone-angular-dart-master/
 
