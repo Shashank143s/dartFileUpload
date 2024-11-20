@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty-20190425
 MAINTAINER Tobe O <thosakwe@gmail.com>
 
 # Install Dart SDK 1.24.2
